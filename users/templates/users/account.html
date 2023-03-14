@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Профиль
+{% endblock %}
+
+{% block content %}
+    <h1>Профиль</h1>
+    <li> User {{ user }} </li>
+    <hr>
+    <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'create_articles' %}">Создание статьи</a>
+    <hr>
+    <h1>Мои статьи</h1>
+    <ul>
+         {% for p in posts %}
+         <li>
+             <h2>{{p.name}}</h2>
+             <p>{{p.content}}</p>
+             <p>{{p.time_create}}</p>
+             <hr>
+         </li>
+         {% endfor %}
+    </ul>
+
+
+{% endblock %}
