@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import login
 from users.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from blog.models import Articles
@@ -34,5 +34,5 @@ class Account(View):
     template_name = 'users/account.html'
 
     def get(self, request):
-        posts = Articles.objects.all()
+        posts = Articles.objects.filter(creator=request.user)
         return render(request, self.template_name, {'posts': posts})

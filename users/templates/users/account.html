@@ -12,15 +12,15 @@
     <hr>
     <h1>Мои статьи</h1>
     <ul>
-         {% for p in posts %}
-         <li>
-             <h2>{{p.name}}</h2>
-             <p>{{p.content}}</p>
-             <p>{{p.time_create}}</p>
-             <hr>
-         </li>
-         {% endfor %}
+        {% for p in posts %}
+        <li>
+            <h2>{{p.name}}</h2>
+            <p>{{p.content}}</p>
+            <p>{{p.time_create}}</p>
+            <p>{{p.creator}}</p>
+<!--             <button type="submit" class="btn btn-success" >Изменить</button>-->
+            <hr>
+        </li>
+        {% endfor %}
     </ul>
-
-
 {% endblock %}
